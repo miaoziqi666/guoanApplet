@@ -1,0 +1,52 @@
+<!--pages/depositDetail/depositDetail.wxml-->
+<view class='background'>
+</view>
+
+<view class='content'>
+
+  <component-house-detail houseDetail="{{houseData}}"></component-house-detail>
+
+  <view class='splitter'></view>
+  <component-form-title title="联系人详情"></component-form-title>
+  <view class='user-info'>
+    <image class='head' src='{{depositInfo.ownerHeader}}'></image>
+    <view class='info-line'>
+      <view class='label'>{{depositInfo.ownerName}}</view>
+      <view class='info'>{{depositInfo.ownerPhone}}</view>
+    </view>
+
+    <view class='info-line'>
+      <view class='label'>预入住时间</view>
+      <view class='info'>{{depositInfo.signDateTime}}</view>
+    </view>
+  </view>
+
+  <view class='splitter'></view>
+  <component-form-title title="留言"></component-form-title>
+  <view class='remark'>
+    {{depositInfo.remark}}
+  </view>
+
+  <view class='splitter'></view>
+  <view class='deposit-info'>
+    <label class='label'>定金</label>
+    
+    
+    <view class='info-group'>
+      <image class='success-mark' src='/icon/depositDetail/success.png'></image>
+      <text class='amount'>￥{{depositInfo.amount}}</text>
+    </view>
+  </view>
+
+  <view class='splitter'></view>
+  <view class='deposit-info'>
+    <label class='label'>定金合同信息</label>
+
+    <view class='info-group'>
+    <text class='deposit-no'>{{depositInfo.depositId}}</text>
+    <text class='status'>{{depositInfo.dealCodeName}}</text>
+    </view>
+    
+  </view>
+
+</view>

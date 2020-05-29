@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "定金预定",
+  "usingComponents": {
+    "component-form-title": "/components/public/formTitle/formTitle",
+    "component-house-detail": "/components/public/houseDetail/houseDetail",
+    "component-pop-error": "/components/public/popError/popError"
+  }
+}

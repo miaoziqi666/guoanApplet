@@ -1,0 +1,39 @@
+/* components/activeList/activeList.wxss */
+
+.active-item {
+  margin: 0 30rpx 30rpx 30rpx;
+  padding-bottom: 30rpx;
+  display: flex;
+  border-bottom: 1rpx solid rgb(242, 242, 242);
+}
+
+.active-item:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.cover {
+  width: 300rpx;
+  height: 170rpx;
+  float: left;
+}
+
+.paperwork {
+  width: 450rpx;
+  float: right;
+  padding-left: 30rpx;
+}
+
+.paperwork .title {
+  font-weight: bold;
+  color: #131313;
+  font-size: 32rpx;
+  display: block;
+  margin-bottom: 10rpx;
+}
+
+.paperwork .desc {
+  color: #666;
+  font-size: 26rpx;
+  display: block;
+}

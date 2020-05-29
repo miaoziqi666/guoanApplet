@@ -1,0 +1,9 @@
+{
+  "navigationBarTitleText": "约看列表",
+  "usingComponents": {
+    "component-list-loading": "/components/public/listLoading/listLoading",
+    "component-tab-bar": "/components/public/tabBar/tabBar",
+    "component-form-title": "/components/public/formTitle/formTitle"
+  },
+  "enablePullDownRefresh": true
+}

@@ -1,0 +1,141 @@
+/* pages/entrust/entrust.wxss */
+.background {
+  background: #e8e8e8;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+/*表单页面  */
+.header {
+  height: 400rpx;
+  display: block;
+  width: 100%;
+}
+
+.content{
+  padding: 15rpx 15rpx 80rpx 15rpx;
+}
+
+.content .tips {
+  padding: 0 20rpx;
+  line-height: 80rpx;
+  background: #fff;
+  font-size: 24rpx;
+  color: #e24e59;
+}
+
+.content .form-line{
+  background: #fff;
+  padding: 30rpx 20rpx;
+  font-size: 28rpx;
+  position: relative;
+}
+
+.form-line .input-label{
+  display: inline-block;
+  vertical-align: middle;
+  padding: 0 40rpx;
+  position: relative;
+  min-width: 200rpx;
+}
+
+.form-line .input-label.require::before{
+  content: "*";
+  position: absolute;
+  color: #e24e59;
+  display: inline-block;
+  left: 10rpx;
+  top: 5rpx;
+}
+
+.form-line .input{
+  display: inline-block;
+  vertical-align: middle;
+  border-bottom: 1rpx solid #eee;
+  padding: 0 10rpx;
+}
+
+.form-line .require-tips{
+  color: #e24e59;
+  position: absolute;
+  right: 20rpx;
+  bottom: 40rpx;
+}
+
+.content .remark {
+  border: 1rpx solid #ccc;
+  margin: 0 auto;
+  width: 100%;
+  text-align: left;
+  font-size: 28rpx;
+  padding: 10rpx;
+  height: 300rpx;
+}
+
+.submit {
+  background: #e24e59;
+  font-size: 30rpx;
+  margin-top: 40rpx;
+  line-height: 80rpx;
+  color: #fff;
+}
+
+/*搜索页面  */
+.search-bar{
+  position: fixed;
+  top: 0;
+  height: 100rpx;
+  width: 100%;
+  border-bottom: 1rpx solid #eee;
+  padding: 0 150rpx 0 20rpx;
+  font-size: 32rpx;
+  background: #fff;
+}
+
+.search-bar .search-icon{
+  position: absolute;
+  left: 60rpx;
+  top: 35rpx;
+}
+
+.search-bar .search-input{
+  border: 1rpx solid #eee;
+  display: block;
+  width: 100%;
+  background: #fff;
+  border-radius: 40rpx;
+  height: 70rpx;
+  margin: 15rpx;
+  padding: 0 80rpx;
+}
+
+.search-bar .clear-icon{
+  position: absolute;
+  top: 35rpx;
+  right: 150rpx;
+  z-index: 2;
+}
+
+.search-bar .cancel-btn{
+  position: absolute;
+  right: 40rpx;
+  color: #09bb07;
+  top: 30rpx;
+  z-index: 2;
+}
+
+.community-list{
+  margin: 110rpx 0 10rpx 0;
+}
+
+.community-list .list-item{
+  line-height: 80rpx;
+  font-size: 30rpx;
+  margin: 0 10rpx;
+  padding: 0 20rpx;
+  border-bottom: 1rpx solid #eee;
+  background: #fff;
+}

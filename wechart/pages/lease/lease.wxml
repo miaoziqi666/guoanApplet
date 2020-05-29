@@ -1,0 +1,89 @@
+<!--pages/lease/lease.wxml-->
+<view class='background'>
+</view>
+
+<swiper class="banner" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}" current="{{current}}" bindchange="changeContract">
+  <block wx:for="{{contractList}}" wx:key="index">
+    <swiper-item>
+      <view class='info-group'>
+        <view class='info-line'>
+          <label class='label'>合同编号</label>
+          <text class='info'>{{item.saleContractId}}</text>
+        </view>
+        <view class='info-line'>
+          <label class='label'>物业地址</label>
+          <text class='info'>{{item.houseAddress}}</text>
+        </view>
+        <view class='info-line'>
+          <label class='label'>合约期</label>
+          <text class='info'>{{item.validDate}} - {{item.endDate}}</text>
+        </view>
+        <view class='info-line'>
+          <label class='label'>租金</label>
+          <text class='info'>￥{{item.realRentMoney}}/月</text>
+        </view>
+        <view class='info-line'>
+          <label class='label'>本期</label>
+          <text class='info'>
+            <text class='number'>{{item.currentNumber}}期 - {{item.payStatus}}</text>
+          </text>
+        </view>
+      </view>
+    </swiper-item>
+  </block>
+</swiper>
+
+
+<view class='content'>
+  <view class='title-segment-line'>
+    <text class='title'>全部账单</text>
+  </view>
+
+  <view class='receipt-item' wx:for="{{receiptPlanList}}" wx:key="index">
+    <view class='item-line'>
+      <label class='label'>租期</label>
+      <text class='info left'>{{item.rentDateStart}} - {{item.rentDateEnd}}</text>
+    </view>
+
+    <view class='item-line'>
+      <label class='label'>应付款日</label>
+      <text class='info left'>{{item.rentDate}}</text>
+    </view>
+
+    <view class='item-line' hidden='{{item.leftDate === ""}}'>
+      <label class='label'>剩余</label>
+      <text class='info left'>
+         <text class='left-time-tip'>{{item.leftDate}}天</text>
+      </text>
+    </view>
+
+    <view class='item-line' hidden='{{!item.exceedDate}}'>
+      <label class='label'>逾期</label>
+      <text class='info left'>
+         <text class='left-time-tip'>{{item.exceedDate}}天</text>
+      </text>
+    </view>
+
+    <view class='right-lable' style="{{'background:' + item.color}}">
+      <text class='text'>第 <text class='strong'>{{item.number}}</text> 期</text>
+      <text class='text'>￥<text class='strong'>{{item.planRent}}</text></text>
+    </view>
+
+    <view class='dashed-line'></view>
+
+    <view class='center-line'>
+      <label class='label'>实缴纳费用</label>
+      <text class='money'>￥{{item.realRent}}</text>
+    </view>
+
+    <view class='bottom-line'>
+      <label class="{{'status ' + (item.payStatus ? 'success' : '')}}">{{item.payStatusName}}</label>
+
+      <view class='btn-group'>
+        <text class='pay-detail' hidden='{{!item.realRent}}' bindtap='toPayDetail' data-receiptPlanId="{{item.receiptPlanId}}" data-saleContractId="{{item.saleContractId}}">支付详情</text>
+        
+        <text class="{{'pay-btn ' + (item.canPay ? 'active' : '')}}" hidden='{{item.realRent >= item.planRent}}' bindtap="toPay" data-receiptPlanId="{{item.receiptPlanId}}" data-saleContractId="{{item.saleContractId}}" data-canPay="{{item.canPay}}">在线支付</text>
+      </view>
+    </view>
+  </view>
+</view>

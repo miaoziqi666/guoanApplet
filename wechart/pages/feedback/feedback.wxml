@@ -1,0 +1,46 @@
+<!--pages/feedback/feedback.wxml-->
+<component-pop-error></component-pop-error>
+
+<view class='background'>
+</view>
+
+<image class='header' src='https://img.guoanfamily.com/wechat/feedback.png'></image>
+<component-tab-bar class="tab-bar" tabs="{{tabs}}" bind:changeTab="changeTab"></component-tab-bar>
+
+<view hidden='{{current !== 0}}' class='form'>
+  <component-form-title title="投诉详情" icon="/icon/feedback/feedback_pinzhigongyu.png"></component-form-title>
+
+  <view class='content-box'>
+    <textarea class='content' bindinput="contentChange" show-confirm-bar="{{false}}" maxlength="200" value="{{content}}" placeholder="请您详细描述投诉对象及理由，保证国安家及时准确处理您的投诉（200个汉字以内）"></textarea>
+  </view>
+
+  <view class='tips'>感谢您提出的建议，我们会及时和您取得联系</view>
+  <view class='phone'>联系电话：{{phone}}</view>
+
+  <button class='submit' bindtap='submit'>提交</button>
+</view>
+
+<view hidden='{{current !== 1}}' class='list'>
+  <view class='list-view'>
+
+    <view class="list-item" wx:for="{{list}}" wx:key="{{index}}">
+      <view class='title'>
+        <text class='label'>投诉单号</text>
+        <text class='no'>{{item.id}}</text>
+      </view>
+
+      <view class='body'>
+        <view class='subject'>投诉对象：{{item.complaintIdentity || '其他'}}</view>
+        <view class='content'>{{item.questionDescription}}</view>
+        <view class='time'>{{item.createTime}}</view>
+
+        <view class='result' hidden='{{!item.dealResult}}'>处理结果：{{item.dealResult}}</view>
+      </view>
+
+      <view class="{{'status ' + (item.orderCode === '0054004' ? '' : 'active')}}">{{item.orderName}}</view>
+    </view>
+
+  </view>
+
+  <component-list-loading loading="{{loading}}"></component-list-loading>
+</view>

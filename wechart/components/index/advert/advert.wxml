@@ -1,0 +1,4 @@
+<!--components/advert/advert.wxml-->
+<view class='image-panel'>
+  <image class='advert' mode="widthFix" lazy-load="{{true}}" src="{{src}}" bindtap='tapImage' data-url="{{url}}"></image>
+</view>

@@ -1,0 +1,49 @@
+<!--pages/reservationsList/list.wxml约看列表-->
+<view class='background'></view>
+<image class='header' src='https://img.guoanfamily.com/wechat/feedback.png'></image>
+<component-tab-bar class="tab-bar" tabs="{{tabs}}" bind:changeTab="changeTab"></component-tab-bar>
+
+<view class='list'>
+  <view class='list-view'>
+
+    <view class="list-item" wx:for="{{list}}" wx:key="{{index}}">
+      <view class='title'>
+        <text class='label'>约看时间</text>
+        <text class='no'>{{item.appointTime}}</text>
+      </view>
+
+      <view class='body'>
+        <view class='content'>
+          <view class='house_detail'>
+            <view class='hd_img'><image bindtap='toDetail' data-id='{{item.roomId}}' data-producttype='{{item.productType}}'  lazy-load="{{true}}" src='{{item.roomFirst}}'></image></view>
+            <view class='hd_content'>
+              <view class='hdc_name'>
+                {{item.houseName}}
+                  <view class='house-line' hidden='{{item.productType ==0019002}}'>|</view> 
+                {{item.roomName}}
+              </view>
+              <view class='hdc_area'>{{item.roomUsedArea ==null ? item.usedArea  :item.roomUsedArea }}²m
+              |
+              {{item.buildFloor}}层</view>
+              <view class='tag-group'>
+                <view class='tag' wx:for="{{item.advantageTags}}" wx:key="{{index}}" style='{{"background:" + tagColor[index]}}'>
+                  {{item}}
+                </view>
+              </view>
+            </view>
+          </view>
+        </view>
+        <view class='result' >
+          <view style='color:#e24e59;'>{{item.price==null?item.rentPrice:item.price}}元/月</view>
+          <view class='cancel_appoint' bindtap='cancelAppoint' data-id='{{item.id}}' wx:if="{{(item.appointCode === '0049001' || item.appointCode ==='0049002')}}" >取消约看</view>
+        </view>
+      </view>
+
+      <view class="status{{(item.appointCode === '0049001' || item.appointCode ==='0049002') ? ':active' : ' '}}">{{item.appointName}}
+      </view>
+    </view>
+
+  </view>
+
+  <component-list-loading loading="{{loading}}"></component-list-loading>
+</view>

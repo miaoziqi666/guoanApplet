@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "投诉建议",
+  "usingComponents": {
+    "component-list-loading": "/components/public/listLoading/listLoading",
+    "component-tab-bar": "/components/public/tabBar/tabBar",
+    "component-form-title": "/components/public/formTitle/formTitle",
+    "component-pop-error": "/components/public/popError/popError"
+  },
+  "enablePullDownRefresh": true
+}

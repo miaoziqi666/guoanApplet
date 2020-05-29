@@ -1,0 +1,120 @@
+/* pages/list/list.wxss */
+
+.list-view {
+  margin-top: 80rpx;
+}
+
+.list-item {
+  position: relative;
+  border-bottom: 10rpx solid rgb(242, 242, 242);
+}
+
+.list-item:last-child {
+  border-bottom: none;
+}
+
+.cover {
+  height: 225rpx;
+  width: 250rpx;
+  position: absolute;
+  left: 20rpx;
+  top: 25rpx;
+  border-radius: 8rpx; 
+}
+
+.house-info {
+  position: relative;
+  padding: 22rpx 20rpx 25rpx 290rpx;
+  min-height: 240rpx;
+}
+
+.name {
+  font-size: 36rpx;
+  margin: 0 0 15rpx 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.info {
+  display: flex;
+  font-size: 25rpx;
+  color: #333;
+  padding: 5rpx ;
+}
+.info-nav{
+  padding-right: 20rpx;
+} 
+
+.tag-group {
+  margin: 20rpx 0 0 0;
+  overflow: hidden;
+}
+
+.tag {
+  padding: 5rpx 10rpx;
+  font-size: 25rpx;
+  /* background: red; */
+  color: #fff;
+  width: 30%;
+  display: inline-block;
+  margin-right: 3%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+  border-radius: 5rpx;
+}
+
+/* .price-box {
+  position: absolute;
+  right: 50rpx;
+  top: 100rpx;
+  font-size: 28rpx;
+} */
+
+ .price {
+  color: #e24e59;
+  font-size: 32rpx; 
+  padding-right:10rpx 
+}
+.price-month{
+  font-size: 32rpx; 
+}
+
+/*空列表提示  */
+
+.empty-block {
+  padding: 150rpx 0 20rpx 0;
+  font-size: 30rpx;
+  text-align: center;
+}
+
+.empty-block .empty-image {
+  width: 40%;
+  margin: 0 auto 20rpx auto;
+  display: block;
+}
+
+.empty-block .empty-tip {
+  display: block;
+  width: 80%;
+  margin: 0 auto;
+  color: #666;
+}
+
+.empty-block .bottom-tip {
+  color: #e24e59;
+  display: block;
+  width: 80%;
+  margin: 180rpx auto 30rpx auto;
+}
+
+.empty-block .continue-btn {
+  width: 90%;
+  margin: 0 auto;
+  background: #e24e59;
+  color: #fff;
+   font-size: 30rpx;
+  line-height: 80rpx;
+}

@@ -1,0 +1,96 @@
+/* pages/depositDetail/depositDetail.wxss */
+.background {
+  background: #e8e8e8;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.content{
+  padding: 15rpx;
+  font-size: 28rpx;
+}
+
+.content .user-info{
+  background: #fff;
+  position: relative;
+  padding: 25rpx 0 0 190rpx;
+  height: 190rpx;
+}
+
+.user-info .head{
+  height: 150rpx;
+  width: 150rpx;
+  position: absolute;
+  top: 20rpx;
+  left: 20rpx;
+}
+
+.user-info .info-line{
+  padding: 0 0 0 30rpx;
+  overflow: hidden;
+  font-size: 30rpx;
+  margin: 20rpx 0 0 0;
+}
+
+.info-line .label{
+  float: left;
+}
+
+.info-line .info{
+  float: right;
+  padding: 0 30rpx 0 0;
+  color: #999;
+}
+
+.content .remark{
+  background: #fff;
+  line-height: 60rpx;
+  font-size: 28rpx;
+  padding: 30rpx;
+  text-decoration: underline;
+  color: #999;
+}
+
+.content .deposit-info{
+  background: #fff;
+  padding: 40rpx 20rpx;
+  overflow: hidden;
+}
+
+.deposit-info .info-group{
+  float: right;
+  position: relative;
+  color: #999;
+}
+
+.deposit-info .label{
+  font-size: 28rpx;
+  vertical-align: middle;
+}
+
+.deposit-info .success-mark{
+  width: 141rpx;
+  height: 109rpx;
+  position: absolute;
+  left: -110%;
+  top: -50%;
+}
+
+.deposit-info .amount{
+  font-size: 40rpx;
+  font-weight: bold;
+}
+
+.deposit-info .deposit-no{
+  margin: 0 20rpx;
+}
+
+.deposit-info .status{
+  color: #fff;
+  background: #5ecd7f;
+  padding: 5rpx 10rpx;
+  border-radius: 5rpx;
+}

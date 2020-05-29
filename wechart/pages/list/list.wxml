@@ -1,0 +1,38 @@
+<!--pages/list/list.wxml-->
+<component-select-bar bind:changeRquest="changeRquest" defaultProductType="{{defaultProductType}}" onShowTimeStamp="{{onShowTimeStamp}}"></component-select-bar>
+
+<view class='list-view'>
+
+  <view class="list-item" wx:for="{{list}}" wx:key="{{index}}" bindtap='toDetail' data-id='{{item.id}}' data-producttype='{{item.productType}}'>
+    <image class='cover' lazy-load="{{true}}" src="{{item.image}}"></image>
+
+    <view class='house-info'>
+      <view class='name'>{{item.houseName + " " + (item.roomName ? item.roomName : "")}}</view>
+      <view class='info'>
+        <view class='info-nav'>{{item.buildNo}}号楼-{{item.roomName}}</view>
+        <view class='info-nav'>{{item.buildFloor}}层|{{item.userArea}}m²</view> 
+       </view>
+       <view class='info'>
+        <text class='price'>{{item.price}}</text>
+        <text class='price-month'> 元/月</text>
+      </view>
+      <view class='tag-group'>
+        <view class='tag' wx:for="{{item.tags}}" wx:key="{{index}}" style='{{"color:" + tagColor[index]}};{{"border:1px solid " + tagColor[index]}}'>
+          {{item}}
+        </view>
+      </view>
+
+    </view>
+  </view>
+
+  <view class='empty-block' hidden='{{loading !== -2}}'>
+    <image class='empty-image' mode="widthFix" src="/icon/list/empty-list-image.png"></image>
+    <text class='empty-tip'>本区域暂时没有满足您需求的房源，可继续搜索其他区域！</text>
+
+    <text class='bottom-tip'>调整搜索条件可能会有所帮助</text>
+    <button class='continue-btn' bindtap='clearSearch'>继续找房</button>
+  </view>
+</view>
+
+
+<component-list-loading loading="{{loading}}"></component-list-loading>

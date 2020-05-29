@@ -1,0 +1,6 @@
+<!--components/switchTab/switchTab.wxml-->
+<view class='group'>
+  <block wx:for="{{tabs}}" wx:key="{{index}}">
+    <text class='{{"tab " + (current === index ? "active" : "" )}}' bindtap='switchTab' data-index="{{index}}">{{item}}</text>
+  </block>
+</view>

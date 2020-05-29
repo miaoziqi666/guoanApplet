@@ -1,0 +1,9 @@
+/* components/advert/advert.wxss */
+.image-panel{
+  padding: 0 30rpx 20rpx 30rpx;
+}
+
+.image-panel .advert{
+  width: 100%;
+  display: block;
+}

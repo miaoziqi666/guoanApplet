@@ -1,0 +1,14 @@
+<!--components/doubleSwiper/doubleSwiper.wxml-->
+<swiper class="{{ desc ? 'double-swiper desc' : 'double-swiper'}}" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}" current="{{current}}">
+  <block wx:for="{{imageList}}" wx:key="{{index}}">
+    <swiper-item class="group">
+      <view wx:for="{{item}}" wx:key="{{index}}" class="item">
+        <image src="{{item.img}}" class="image" bindtap="tapImage" data-url="{{item.url}}" />
+        <view class='image-desc'>
+          <text class='name' wx-if="{{item.name}}">{{item.name}}</text>
+          <text class='price' wx-if="{{item.price}}">{{item.price}}</text>
+        </view>
+      </view>
+    </swiper-item>
+  </block>
+</swiper>

@@ -1,0 +1,17 @@
+/**app.wxss**/
+view, button, image, text, scroll-view, swiper, icon, progress, form, input,
+label, picker, slider, switch, textarea, map, canvas {
+  box-sizing: border-box;
+}
+
+.splitter{
+  display: block;
+  clear: both;
+  height: 20rpx;
+  width: 100%;
+  background-color: #e8e8e8;
+}
+
+.splitter.slim{
+  height: 10rpx;
+}

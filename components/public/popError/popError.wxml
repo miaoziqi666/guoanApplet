@@ -1,0 +1,2 @@
+<!--components/public/popError/popError.wxml-->
+<view class="pop-error"  hidden="{{!errorMsg}}">{{errorMsg}}</view>

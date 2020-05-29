@@ -1,0 +1,69 @@
+<!--pages/contractPay/contractPay.wxml-->
+<component-pop-error></component-pop-error>
+
+<view class='background'>
+</view>
+
+<view class='content'>
+  <view class='info-group'>
+    <view class='info-line'>
+      <label class='label'>合同编号</label>
+      <text class='info'>{{saleContractId}}</text>
+    </view>
+
+    <view class='info-line'>
+      <label class='label'>物业地址</label>
+      <text class='info'>{{houseAddress}}</text>
+    </view>
+
+    <view class='info-line'>
+      <label class='label'>租金期数</label>
+      <text class='info'>{{receiptPlanNumber}}期</text>
+    </view>
+
+    <view class='info-line'>
+      <label class='label'>已交次数</label>
+      <text class='info'>{{receiptPlanSubmitCount}}次</text>
+    </view>
+
+    <view class='info-line'>
+      <label class='label'>应缴金额</label>
+      <text class='info'>
+       <text class='number'>￥{{receiptPlanPlanRent}}</text>
+      </text>
+    </view>
+  </view>
+
+  <view class='splitter'></view>
+
+  <view class='info-group'>
+    <view class='info-line'>
+      <label class='label'>已交金额</label>
+      <text class='info'>￥{{receiptPlanRealRent}}</text>
+    </view>
+  </view>
+
+  <view class='splitter'></view>
+
+  <view class='info-group'>
+    <view class='info-line'>
+      <label class='label'>本期支付租金（元）</label>
+    </view>
+
+    <view class='info-line center'>
+      <button class='num-btn' bindtap='reduceMoney'>-</button>
+      <input class='rant-number' type='number' maxlength="8" bindinput="changeRant" bindblur='clearMoney' value="{{payMoney}}"></input>
+      <button class='num-btn' bindtap='addMoney'>+</button>
+    </view>
+  </view>
+
+  <view class='splitter'></view>
+
+  <view class='info-group'>
+    <view class='info-line'>
+      <text class='tips'>温馨提示：如果您的租金超过3000元，请换卡分次支付，或隔日继续支付！</text>
+    </view>
+  </view>
+
+  <button class='submit' disabled='{{payComplete}}' bindtap='submit'>确认支付</button>
+</view>

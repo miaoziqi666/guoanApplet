@@ -1,0 +1,36 @@
+/* components/public/tabBar/tabBar.wxss */
+.group {
+  display: flex;
+  justify-content: space-around;
+  font-size: 28rpx;
+  position: relative;
+  background: #fff;
+}
+
+.group view{
+  line-height: 80rpx;
+  text-align: center;
+  width: 100%;
+  transition: .5s;
+  color: #343434;
+  /* border-bottom: 7rpx solid #fff; */
+}
+
+.group view.active{
+  color: #e14e56;
+  /* border-bottom: 7rpx solid #e14e56; */
+}
+
+.shuttle{
+  position: absolute;
+  left: 0%;
+  right: 0%;
+  bottom: 0;
+  height: 7rpx;
+  background: #e14e56;
+  transition: right .3s cubic-bezier(.35,0,.25,1) .09s,left .3s cubic-bezier(.35,0,.25,1); 
+}
+
+.shuttle.right{
+  transition: right .3s cubic-bezier(.35,0,.25,1),left .3s cubic-bezier(.35,0,.25,1) .09s;
+}

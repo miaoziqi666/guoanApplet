@@ -1,0 +1,125 @@
+{
+	"description": "项目配置文件。",
+	"setting": {
+		"urlCheck": true,
+		"es6": true,
+		"postcss": true,
+		"minified": true,
+		"newFeature": true
+	},
+	"compileType": "miniprogram",
+	"libVersion": "1.7.2",
+	"appid": "wxcd706f27320bc19a",
+	"projectname": "%E5%9B%BD%E5%AE%89%E5%AE%B6%E7%A7%9F%E6%88%BF",
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
+	"condition": {
+		"search": {
+			"current": -1,
+			"list": []
+		},
+		"conversation": {
+			"current": -1,
+			"list": []
+		},
+		"game": {
+			"current": -1,
+			"list": []
+		},
+		"miniprogram": {
+			"current": -1,
+			"list": [
+				{
+					"id": -1,
+					"name": "房源列表",
+					"pathName": "pages/list/list",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "问题反馈",
+					"pathName": "pages/feedback/feedback",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "登录",
+					"pathName": "pages/login/login",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "业主委托",
+					"pathName": "pages/entrust/entrust",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "提交约看",
+					"pathName": "pages/reservations/reservations",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "约看列表",
+					"pathName": "pages/reservationsList/list",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的合同",
+					"pathName": "pages/contract/contract",
+					"query": ""
+				},
+				{
+					"id": 6,
+					"name": "定金合同详情",
+					"pathName": "pages/depositDetail/depositDetail",
+					"query": "id=BJGAJDJ1511507259580"
+				},
+				{
+					"id": 7,
+					"name": "租房合同详情",
+					"pathName": "pages/contractDetail/contractDetail",
+					"query": "id=BJGAJCF1514863805033"
+				},
+				{
+					"id": -1,
+					"name": "出房合同租金付款",
+					"pathName": "pages/contractPay/contractPay",
+					"query": "receiptPlanId=BJGAJSKJH31511513193769&saleContractId=BJGAJCF1511508067621"
+				},
+				{
+					"id": -1,
+					"name": "我的租约",
+					"pathName": "pages/lease/lease",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "定金预定",
+					"pathName": "pages/depositReservation/depositReservation",
+					"query": ""
+				},
+				{
+					"id": 11,
+					"name": "支付详情",
+					"pathName": "pages/leasePayDetail/leasePayDetail",
+					"query": "receiptPlanId=BJGAJSKJH21511513193769&saleContractId=BJGAJCF1511508067621"
+				},
+				{
+					"id": -1,
+					"name": "我",
+					"pathName": "pages/me/me",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "我的收藏",
+					"pathName": "pages/collectList/collectList",
+					"query": ""
+				}
+			]
+		}
+	}
+}

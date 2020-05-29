@@ -1,0 +1,21 @@
+/* components/public/formTitle/formTitle.wxss */
+.form-title {
+  text-align: left;
+  background: #fff;
+  padding: 0 20rpx;
+  line-height: 80rpx;
+  display: block;
+  border-bottom: 3rpx solid #e8e8e8;
+}
+
+.form-title .icon {
+  height: 40rpx;
+  width: 40rpx;
+  vertical-align: middle;
+  margin-right: 10rpx;
+}
+
+.form-title .text {
+  vertical-align: middle;
+  font-size: 28rpx;
+}

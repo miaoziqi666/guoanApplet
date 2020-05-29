@@ -1,0 +1,5 @@
+<!--components/public/formTitle/formTitle.wxml-->
+<view class='form-title'>
+    <image class='icon' src='{{icon}}' hidden='{{!icon}}'></image>
+    <text class='text'>{{title}}</text>
+</view>

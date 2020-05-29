@@ -1,0 +1,52 @@
+<!--pages/contract/contract.wxml-->
+<view class='background'>
+</view>
+
+<image class='header' src='https://img.guoanfamily.com/wechat/contract.png'></image>
+<component-tab-bar class="tab-bar" tabs="{{tabs}}" bind:changeTab="changeTab"></component-tab-bar>
+
+<view hidden='{{current !== 0}}' class='list'>
+  <view class='list-view'>
+
+    <view class='list-item' wx:for="{{depositList}}" wx:key="{{index}}" bindtap='toDeposit' data-id="{{item.id}}">
+      <view class='title'>
+        <text class='label'>定金合同</text>
+        <text class='no'>{{item.id}}</text>
+      </view>
+      <view class='body'>
+        <image class='cover' src="{{item.picImage}}"></image>
+        <view class='content'>
+          <view class='time'>{{item.signDateTime}}</view>
+          <view class='name'>{{item.houseName + " " + (item.roomName || "")}}</view>
+          <view class='rent-price'>租金：{{item.rentPrice}}</view>
+          <view class='deposit-price'>定金：{{item.amount}}</view>
+        </view>
+      </view>
+      <view class="status active">{{item.statusName}}</view>
+    </view>
+
+  </view>
+</view>
+
+<view hidden='{{current !== 1}}' class='list'>
+  <view class='list-view'>
+
+    <view class='list-item' wx:for="{{contract}}" wx:key="{{index}}" bindtap='toContract' data-id="{{item.id}}">
+      <view class='title'>
+        <text class='label'>承租合同</text>
+        <text class='no'>{{item.id}}</text>
+      </view>
+
+      <view class='body'>
+        <image class='cover' src="{{item.picImage}}"></image>
+        <view class='content'>
+          <view class='time'>{{item.signDateTime}} - {{item.endDateTime}}</view>
+          <view class='name'>{{item.houseName + " " + (item.roomName || "")}}</view>
+          <view class='rent-price'>租金：{{item.rentPrice}}</view>
+        </view>
+      </view>
+      <view class="status active">{{item.statusName}}</view>
+    </view>
+
+  </view>
+</view>

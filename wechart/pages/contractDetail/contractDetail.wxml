@@ -1,0 +1,61 @@
+<!--pages/contractDetail/contractDetail.wxml-->
+<view class='background'>
+</view>
+
+<view class='content'>
+  <component-form-title title="{{contractInfo.saleContractId}}"></component-form-title>
+
+  <component-house-detail houseDetail="{{houseData}}"></component-house-detail>
+
+  <view class='splitter'></view>
+
+  <view class='info-group'>
+    <view class='info-line'>
+      <label class='label'>租期</label>
+      <text class='info'>{{contractInfo.validDate}} - {{contractInfo.endDate}}</text>
+    </view>
+
+    <view class='info-line'>
+      <label class='label'>付款方式</label>
+      <text class='info'>{{contractInfo.receiptCycleName}}</text>
+    </view>
+
+    <view class='info-line'>
+      <label class='label'>物业交割信息</label>
+      <text class='info'>{{contractInfo.isDelivery}}</text>
+    </view>
+
+    <view class='info-line'>
+      <label class='label'>租约账单</label>
+      <text class='info' bindtap='toPay'>
+        <text class='number'>{{contractInfo.number}}期</text>
+        <text class="{{'status ' + (payStatusActive ? 'active' : '')}}">{{contractInfo.payStatus}}</text>
+      </text>
+    </view>
+  </view>
+
+  <view class='splitter'></view>
+
+  <view class='info-group'>
+    <view class='info-line'>
+      <label class='label'>合租人</label>
+      <text class='info' hidden='{{!contractInfo.jointRentName}}'>
+        <text class='name'>{{contractInfo.jointRentName}}</text>
+      <text class='phone'>{{contractInfo.jointRentPhone}}</text>
+      </text>
+    </view>
+  </view>
+
+  <view class='splitter'></view>
+
+  <view class='info-group'>
+    <view class='info-line'>
+      <label class='label'>签约主体信息</label>
+      <text class='info'>
+         <text class='name'>{{contractInfo.renterName}}</text>
+      <text class='phone'>{{contractInfo.ownerPhone}}</text>
+      </text>
+    </view>
+  </view>
+
+</view>

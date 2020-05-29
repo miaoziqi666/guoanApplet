@@ -1,0 +1,13 @@
+<!--components/public/listLoding/listLoading.wxml-->
+<view class='loading-box'>
+  <view class='no-data' hidden="{{loading !== -1}}">
+     <view class='finish'>
+      <text class='tip'>已经到最后了</text>
+     </view>
+     <view class='make'>
+           <text class='phone-number' bindtap='callPhone'>400-900-2225</text>
+            <text class='finish'>拨打热线告诉我们您的租房需求</text>
+     </view>
+  </view>
+   <image class='loading' src='../../../icon/list/loading.png' hidden="{{loading !== 1}}"></image>
+</view>

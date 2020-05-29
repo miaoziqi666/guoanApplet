@@ -1,0 +1,45 @@
+<!--pages/me/me.wxml-->
+<view class='background'>
+</view>
+
+<view class='page-header' bindtap='toLogin'>
+  <image class='user-head' src='{{userHead || defaultUserHead}}'></image>
+  <view class='user-name'>{{userName}}</view>
+  <view class='user-phone'>{{userPhone}}</view>
+</view>
+
+<view class='splitter'></view>
+
+<view class='content'>
+
+  <component-menu-panel menu="{{entry}}"></component-menu-panel>
+
+  <view class='splitter'></view>
+
+  <component-form-title title="租房" icon="/icon/index/index_zuixinshangjia.png"></component-form-title>
+
+  <component-menu-panel menu="{{menu}}"></component-menu-panel>
+
+  <view class='splitter'></view>
+
+  <view class='option-group'>
+    <view class='option-item' bindtap='toFeedback'>
+      <view class='lable-group'>
+        <image class='icon' src='/icon/me/entry-feedback.png'></image>
+        <label class='label'>投诉建议</label>
+      </view>
+
+      <image class='link-mark' src="/icon/public/arrow-right.png"></image>
+    </view>
+
+    <view class='option-item' bindtap='toLogout' hidden='{{!userPhone}}'>
+      <view class='lable-group'>
+        <image class='icon' src='/icon/me/entry-logout.png'></image>
+        <label class='label'>退出登录</label>
+      </view>
+
+       <image class='link-mark' src="/icon/public/arrow-right.png"></image>
+    </view>
+  </view>
+
+</view>

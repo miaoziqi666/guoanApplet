@@ -1,0 +1,21 @@
+<!--pages/login/login.wxml-->
+<component-pop-error></component-pop-error>
+
+<image class='logo' mode="widthFix" src="https://img.guoanfamily.com/wechat/logo.png"></image>
+
+<form class='login-form'>
+
+  <view class='form-line'>
+    <image class='icon'  src="../../icon/login/login_phone.png"></image>
+    <input class='info' placeholder='请输入手机号' maxlength='11' type="number" bindinput="phoneChange"></input>
+    <button class="{{'btn ' + (time === 0 ? '' : 'disable')}}" bindtap='getCode' bindtap='getCode'>{{buttonTip}}</button>
+  </view>
+
+  <view class='form-line'>
+    <image class='icon'  src="../../icon/login/login_password.png"></image>
+    <input class='info' placeholder='请输入验证码' maxlength='6' type="number" bindinput="codeChange"></input>
+  </view>
+
+  <button class='submit' bindtap='submit'>登录</button>
+
+</form>

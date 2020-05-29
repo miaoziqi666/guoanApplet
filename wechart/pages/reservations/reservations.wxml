@@ -1,0 +1,76 @@
+<!--pages/reservations/reservations.wxml-->
+<view class='background'>
+</view>
+
+ <component-house-detail house-detail="{{houseData}}" ></component-house-detail>
+
+  <view class='nav-tol'></view>
+
+  <view class='content_t'>
+          <component-form-title title="联系人信息" icon="/icon/reservations/person.png"></component-form-title>
+      <view class='ctl_deatil'>
+        <view class='ctld_diput'>
+          <view class='ctp_one'>*</view>
+          <view class='ctp_two'>手机号</view>
+          <view class='ctp_inpt'><input type='text' type='number' bindinput="bindPhoneInput" placeholder='请输入手机号' value='{{houseData.renterPhone}}' /></view>
+          <text class='must-text'>(必填)</text>
+        </view>
+        <view class='ctld_diput'>
+          <view class='ctp_one'>*</view>
+          <view class='ctp_two'>姓名</view>
+          <view class='ctp_inpt'><input type='text'   bindinput="bindUserNameInput" placeholder='请输入您的姓名' value='{{houseData.renterName}}' /></view>
+          <text class='must-text'>(必填)</text>
+        </view>
+        <view class='ctld_diput'>
+          <view class='ctp_one'>*</view>
+          <view class='ctp_two'>称呼</view>
+          <view class='ctp_inpt'>
+              <view class='ctpi_switch'>
+                <radio-group class="radio-group" bindchange="radioChange">
+                  <label class="radio" wx:for="{{gengers}}" wx:key="index">
+                    <radio value="{{item.name}}" checked="{{item.name===houseData.renterSex}}"/>{{item.value}}
+                  </label>
+                </radio-group>
+               </view> 
+          </view>
+        </view>
+      </view>
+  </view>
+  <view class='nav-tol'></view>
+
+  <view class='content_tr'>
+    <view class='select_home_time'>
+      <view class='ctld_diput ct_two'>
+          <view class='ctp_one'>*</view>
+          <view class='ctp_two'>期待看房时间</view>
+          <view class='ctp_inpt ctp_picker'>
+            <picker mode="date" bindchange="bindDateChange">
+              <view class='select_date'>{{selectDate === ''?'看房日期':selectDate }}</view>
+            </picker>
+            <view class='nav_k'></view>
+            <picker mode="time" bindchange="bindTimeChange">
+              <view class='select_time'>{{selectTime === ''?'看房时间':selectTime }}</view>
+            </picker>
+          </view>
+        </view>
+    </view>
+  </view>
+  <view class='nav-tol'></view>
+
+  <view class='content_f'>
+    <view class='cf_content'>
+      <view class='cf_ly'>留言</view>
+      <view class='cf_txtarea'>
+        <textarea placeholder='更多看房或找房需求' bindinput='bindTextTap' value='{{houseData.remark}}'></textarea>
+      </view>
+    </view>
+  </view>
+
+  <view class='nav-tol'></view>
+
+  <view class='content_btn'>
+    <view class='c_btn_tj'>
+      <button type="warn" disabled='{{btnDisable}}' loading='{{loading}}' bindtap="saveAppoint" > 提交约看 </button>
+    </view>
+  </view>
+  <component-pop-error></component-pop-error>

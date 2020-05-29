@@ -1,0 +1,10 @@
+{
+  "navigationBarTitleText": "国安家租房",
+  "usingComponents": {
+    "component-title-bar": "/components/index/titleBar/titleBar",
+    "component-advert": "/components/index/advert/advert",
+    "component-active-list": "/components/index/activeList/activeList",
+    "component-switch-tab": "/components/index/switchTab/switchTab",
+    "component-double-swiper": "/components/public/doubleSwiper/doubleSwiper"
+  }
+}

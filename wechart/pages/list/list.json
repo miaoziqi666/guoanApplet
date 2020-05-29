@@ -1,0 +1,8 @@
+{
+  "navigationBarTitleText": "房源列表",
+  "usingComponents": {
+    "component-select-bar": "/components/list/selectBar/selectBar",
+    "component-list-loading": "/components/public/listLoading/listLoading"
+  },
+  "enablePullDownRefresh": true
+}

@@ -1,0 +1,339 @@
+<!--pages/detail/detail.wxml-->
+<view class='warp'>
+  <!-- one-b-v -->
+  <view style='position:relative;'>
+    <swiper bindchange='bindchange' class="banner" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}" current="{{current}}"> 
+      <block wx:for="{{imagesList}}" wx:key="unique">
+        <swiper-item>
+          <image data-index="{{item.index}}" data-src="{{item.image}}" src="{{item.image}}" class="slide-image" bindtap="imgYu" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <text class='page-index'>{{currentPage}}</text>
+  </view>
+
+  <!-- two-b-v -->
+  <view class='room-detail'>
+      <view class="room-title">
+      <view class="pirce">￥{{price == null?0:price}}/月</view>
+      <view bindtap='collection' class='collect  {{isload?"loadIn":"loadOut"}}'>
+        <image class='xcollect {{isCollection?"hide":"show"}}'  src="../../icon/detail/starRed.png"></image>
+        <image class='xcollect {{isCollection?"show":"hide"}}' src="../../icon/detail/starSolid.png"></image>
+        <text class='tcollect'>收藏</text>
+      </view>
+      </view> 
+      <view class='room-cdetail'>
+        <text>{{areaName + "　" + communityName + "　" + colledtName }}</text>
+      </view>
+      <view class='room-tag'>
+        <block class='tag-count' wx:key wx:for="{{advantageTagsArr}}">
+          <view class='tag-name' >{{item}}</view>
+        </block>
+        <view class="clear"></view>
+      </view> 
+  </view>
+  <!-- three-b-v -->
+  <view class='room-d'>
+      <view class='details'>
+        <div class="row-col">
+          <text class="row">户型：</text> 
+          <text>{{changeRoomNo+"室"+changeLivingNo+"厅"}}</text>
+        </div>
+        <div class="row-col">
+          <text class="row">层数：</text> 
+          <text>{{buildFloor}}</text>
+        </div>
+        <div class="row-col">
+          <text class="row">面积：</text> 
+          <text>{{usedArea}}㎡</text>
+        </div>
+        <div class="row-col">
+          <text class="row">朝向：</text> 
+          <text>{{roomOrientation ==null ? ' ' : roomOrientation}}</text>
+        </div>
+      </view>
+      <view class='phone'>
+        <image class='tel' src='../../icon/detail/tel.png'></image>
+        <p class="phone-name">客服热线
+          <a href="tel:400-900-2225">
+            <span class="phone-num" bindtap="callme">　400-900-2225</span>
+          </a>
+        </p>
+      </view>
+  </view>
+  <!-- four-b-v -->
+  <view class='houseRoomDetail'>
+    <!-- 房源介绍 again-->
+    <view class='{{isHaveEnvironment?"show":"hide"}}'>
+      <view class='houseRoomDetail-title'>
+        <view class='houseRoomDetail-color one'></view>
+        <view>房源介绍</view>
+      </view>
+      <view class='house-content'>{{advantageEnvironment}}</view>
+    </view>
+    <!-- 房屋配套 -->
+    <view class='houseRoomDetail-title'>
+      <view class='houseRoomDetail-color two'></view>
+      <view>房屋配套</view>
+    </view>
+    <!-- 房屋配置物品 -->
+     <!-- wx:for="{{roomItems}}" wx:key="" -->
+    <view class='facility'>
+      <!-- 房间 -->
+      <view wx:for="{{room}}" wx:key="">
+        <!-- 房间标签 again -->
+        <view class='room-items'>
+          <image class='tag-color' src='../../icon/detail/orange.png'></image>
+          <view class='text'>
+            <text class='room-id'>{{item.roomItemName}}</text>
+            <text class='room-area'>({{item.usedArea}}㎡)</text>
+          </view>
+        </view>
+        <!-- 房间内容 -->
+        <view class='facility-content'>
+          <view class='facility-col'>
+            <image class='facility-img' src='../../icon/detail/bed.png'></image>
+            <text class='facility-text'>双人床</text>
+          </view>
+          <view class='facility-col'>
+            <image class='facility-img' src='../../icon/detail/chuangdian.png'></image>
+            <text class='facility-text'>双人床垫</text>
+          </view>
+          <view class='facility-col'>
+            <image class='facility-img' src='../../icon/detail/threedoor.png'></image>
+            <text class='facility-text'>三门衣柜</text>
+          </view>
+          <view class='facility-col'>
+            <image class='facility-img' src='../../icon/detail/guizi.png'></image>
+            <text class='facility-text'>床头柜</text>
+          </view>
+          <view class='facility-col'>
+            <image class='facility-img' src='../../icon/detail/desk.png'></image>
+            <text class='facility-text'>写字桌</text>
+          </view>
+          <view class='facility-col'>
+            <image class='facility-img' src='../../icon/detail/yizi.png'></image>
+            <text class='facility-text'>写字椅</text>
+          </view>
+          <view class='facility-col'>
+            <image class='facility-img' src='../../icon/detail/wifi.png'></image>
+            <text class='facility-text'>wifi</text>
+          </view>
+          <view class='facility-col'>
+            <image class='facility-img' src='../../icon/detail/kongtiao.png'></image>
+            <text class='facility-text'>空调</text>
+          </view>
+          <view class='facility-col'>
+            <image class='facility-img' src='../../icon/detail/lock.png'></image>
+            <text class='facility-text'>智能锁</text>
+          </view>
+          <view class='facility-col'>
+            <image class='facility-img' src='../../icon/detail/chazuo.png'></image>
+            <text class='facility-text'>智能插座</text>
+          </view>
+        </view>
+      </view>
+      <!-- 客厅 -->
+      <view wx:for="{{parlour}}" wx:key="">
+        <!-- 客厅标签 again -->
+        <view class='room-items'>
+          <image class='tag-color' src='../../icon/detail/red.png'></image>
+          <view class='text'>
+            <text class='room-id'>{{item.roomItemName}}</text>
+            <text class='room-area'>({{item.usedArea}}㎡)</text>
+          </view>
+        </view>
+        <!-- 客厅内容 -->
+        <view class='facility-content'>
+          <view class='facility-col'>
+            <image class='facility-img' src='../../icon/detail/luyou.png'></image>
+            <text class='facility-text'>路由器</text>
+          </view>
+          <view class='btm-one'></view>
+        </view>
+      </view>
+      <!-- 厨房 -->
+      <view wx:for="{{Kitchen}}" wx:key="">
+        <!-- 厨房 again -->
+        <view class='room-items'>
+          <image class='tag-color' src='../../icon/detail/green.png'></image>
+          <view class='text'>
+            <text class='room-id'>{{item.roomItemName}}</text>
+            <text class='room-area'>({{item.usedArea}}㎡)</text>
+          </view>
+        </view>
+        <!-- 厨房内容 -->
+        <view class='facility-content'>
+          <view class='facility-col'>
+            <image class='facility-img' src='../../icon/detail/bingxiang.png'></image>
+            <text class='facility-text'>冰箱</text>
+          </view>
+          <view class='facility-col'>
+            <image class='facility-img' src='../../icon/detail/youyanji.png'></image>
+            <text class='facility-text'>抽油烟机</text>
+          </view>
+          <view class='facility-col'>
+            <image class='facility-img' src='../../icon/detail/weibolu.png'></image>
+            <text class='facility-text'>微波炉</text>
+          </view>
+          <view class='facility-col'>
+            <image class='facility-img' src='../../icon/detail/ranqizao.png'></image>
+            <text class='facility-text'>燃气灶</text>
+          </view>
+          <view class='btm-one'></view>
+        </view>
+      </view>
+      <!-- 卫生间 -->
+      <view wx:for="{{toilet}}" wx:key="">
+          <!-- 卫生间标签 again -->
+          <view class='room-items'>
+            <image class='tag-color' src='../../icon/detail/blue.png'></image>
+            <view class='text'>
+              <text class='room-id'>{{item.roomItemName}}</text>
+            <text class='room-area'>({{item.usedArea}}㎡)</text>
+            </view>
+          </view>
+          <!-- 卫生间内容 -->
+          <view class='facility-content'>
+            <view class='facility-col'>
+              <image class='facility-img' src='../../icon/detail/xiyiji.png'></image>
+              <text class='facility-text'>{{item.typeCode == "0014005"?"无":"洗衣机"}}</text>
+            </view>
+            <view class='facility-col'>
+              <image class='facility-img' src='../../icon/detail/hotwater.png'></image>
+              <text class='facility-text'>{{item.typeCode == "0014005"?"无":"热水器"}}</text>
+            </view>
+          </view>
+      </view>
+    </view>
+    <!-- 房间室友信息 -->
+    <view class='{{isHaveroomList?"show":"hide"}}'>
+      <!-- 房间室友信息 title-->
+      <view class='houseRoomDetail-title'>
+        <view class='houseRoomDetail-color three'></view>
+        <view>房间室友信息</view>
+      </view>
+      <!-- 房间室友信息list -->
+      <view class='room-mate'>
+        <!-- list  wx:for="" wx:key="" -->
+        <view wx:for="{{roomList}}" wx:key="" class='room-mate-li'>
+          <view class='room-mate-li1'>
+            <span>{{item.roomName}}</span>
+          </view>
+          <view class="room-mate-li2 {{item.isIntakeState?'yes-check-in':'no-check-in'}}">
+            {{item.intakeState}}
+          </view>
+          <view class='room-mate-li3'>
+          {{"￥"+item.price+"/月 " +item.sexChinese}}
+            <image src="{{item.icon}}" class='room-mate-li3-img'></image>
+          </view>
+          <view class="room-mate-li4 {{item.isthisHouse?'show':'hide'}}">
+            当前房源
+          </view>
+          <view bindtap='watchRoom' data-id="{{item.roomId}}" class="room-mate-li5 {{item.isthisHouse?'hide':'show'}}">
+            查看房间
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 服务介绍 -->
+     <view>
+      <!-- 服务介绍 title-->
+      <view class='houseRoomDetail-title'>
+        <view class='houseRoomDetail-color four'></view>
+        <view>服务介绍</view>
+      </view>
+      <!-- 服务介绍 list-->
+      <view class='room-serve'>
+        <view class='room-server-li'>
+          <image class='room-server-img' src='../../icon/detail/pinzhi.png'></image>
+          <text style='color:#ff9233;' class='room-server-text'>品质</text>
+          <text class='room-server-text2'>真实房源、环保家具、智能门锁</text>
+        </view>
+        <view class='room-server-li'>
+          <image class='room-server-img' src='../../icon/detail/serve.png'></image>
+          <text style='color:rgb(230, 98, 83);' class='room-server-text'>服务</text>
+          <text class='room-server-text2'>月度保洁、及时维修</text>
+        </view>
+        <view class='room-server-li'>
+          <image class='room-server-img' src='../../icon/detail/pay.png'></image>
+          <text style='color:rgb(61, 202, 232);' class='room-server-text'>支付</text>
+          <text class='room-server-text2'>多种支付方式灵活选择</text>
+        </view>
+      </view>
+    </view>
+    <!-- 周边交通 -->
+    <view>
+      <!-- 周边交通 title-->
+      <view class='houseRoomDetail-title {{isHaveSurrounding && ishaveTraffic?"show":"hide"}}'>
+        <view class='houseRoomDetail-color five'></view>
+        <view>周边交通</view>
+      </view>
+      <!-- 周边交通 detail-->
+      <view  class='room-wrap {{isHaveSurrounding && ishaveTraffic?"show":"hide"}}'>
+        <!-- 周边 -->
+        <view class='room-round {{isHaveSurrounding?"show":"hide"}}'>
+          <view class='room-round-space'>
+            <image class='room-round-img' src='../../icon/detail/round.png'></image>
+            <text class='room-round-text'>周边</text>
+            <text class='clear'></text>
+          </view>
+          <!-- 周边详情 -->
+          <text class='room-round-text2'>{{surrounding}}
+          </text>
+        </view>
+        <!-- 交通 -->
+        <view class='room-round {{ishaveTraffic?"show":"hide"}}'>
+          <view class='room-round-space'>
+            <image class='room-round-img' src='../../icon/detail/traffic.png'></image>
+            <text class='room-transport-text'>交通</text>
+            <text class='clear'></text>
+          </view>
+          <!-- 交通详情 -->
+          <text  class='room-round-text2'>{{circumjacentTraffic}}
+          </text>
+          <map style='position:absolute;z-index:10;' id="map" longitude="{{longitude}}" latitude="{{latitude}}" scale="14" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" circles="{{circles}}" bindregionchange="regionchange" show-location="true" style="width: 100%; height: 450rpx;">
+          <!-- <cover-view><image src='../../icon/detail/block.png' class='now-location' type="primary" bindtap="moveToLocation"></image> </cover-view> -->
+          </map>
+          
+           
+        </view>
+      </view>
+    </view>
+    <!-- 小区 -->
+    <view class='room-district {{isHaveRecommend?"show":"hide"}}'>
+      <!-- 小区title-->
+      <view style='margin-bottom:20rpx;' class='houseRoomDetail-title'>
+        <view class='houseRoomDetail-color six'></view>
+        <view>小区</view>
+      </view>
+      <!-- 小区轮播图 -->
+      <component-double-swiper class='{{isHaveCommunityImages?"show":"hide"}}' original-list="{{productList}}" desc="{{false}}" resetFlag="{{resetTime}}"></component-double-swiper>
+      <text class='room-district-text'>{{recommend}}</text>
+    </view>
+  </view>
+</view>
+<!-- 国安家推荐 -->
+<view class='recommend'>
+  <!-- 国安家推荐title -->
+  <view class='recommend-title'>
+    <p></p>
+      <text>国安家推荐</text>
+    <p></p>
+  </view>
+  <!-- 国安家推荐轮播图 -->
+  <component-double-swiper original-list="{{roomArr}}" desc="{{true}}" resetFlag="{{resetTime}}"></component-double-swiper>
+</view>
+<!-- 租金付款 -->
+<view class='room-money'>
+  <view class='room-money-w'>
+    <view class='room-money-money'>￥{{price == null?0:price}}/月</view>
+  </view>
+  <view class='room-money-w'>
+    <view class='look-about botton' bindtap='goAppoint'>预约看房</view>
+  </view>
+  <view class='room-money-w'>
+    <view class='room-down botton'bindtap='goDepositReservation'>定金下定</view>
+  </view>
+</view>
+  <component-pop-error></component-pop-error>

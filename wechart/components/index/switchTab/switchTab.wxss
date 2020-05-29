@@ -1,0 +1,20 @@
+/* components/switchTab/switchTab.wxss */
+
+.group {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 40rpx;
+}
+
+.tab {
+  font-size: 28rpx;
+  transition: .5s;
+  color: #343434;
+  line-height: 50rpx;
+   border-bottom: 7rpx solid #fff;
+}
+
+.tab.active{
+  color: #e14e56;
+  border-bottom: 7rpx solid #e14e56;
+}

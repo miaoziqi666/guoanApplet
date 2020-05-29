@@ -1,0 +1,53 @@
+{
+  "pages": [
+    "pages/index/index",
+    "pages/list/list",
+    "pages/feedback/feedback",
+    "pages/login/login",
+    "pages/entrust/entrust",
+    "pages/detail/detail",
+    "pages/reservations/reservations",
+    "pages/contract/contract",
+    "pages/depositDetail/depositDetail",
+    "pages/contractDetail/contractDetail",
+    "pages/contractPay/contractPay",
+    "pages/lease/lease",
+    "pages/reservationsList/list",
+    "pages/depositReservation/depositReservation",
+    "pages/me/me",
+    "pages/leasePayDetail/leasePayDetail",
+    "pages/collectList/collectList"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#e24e5a",
+    "navigationBarTitleText": "国安家租房",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#949393",
+    "selectedColor": "#e24e5a",
+    "backgroundColor": "#fff",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "首页",
+        "iconPath": "/icon/bottomTabBar/home.png",
+        "selectedIconPath": "/icon/bottomTabBar/home-active.png"
+      },
+      {
+        "pagePath": "pages/list/list",
+        "text": "房源",
+        "iconPath": "/icon/bottomTabBar/list.png",
+        "selectedIconPath": "/icon/bottomTabBar/list-active.png"
+      },
+      {
+        "pagePath": "pages/me/me",
+        "text": "我",
+        "iconPath": "/icon/bottomTabBar/me.png",
+        "selectedIconPath": "/icon/bottomTabBar/me-active.png"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

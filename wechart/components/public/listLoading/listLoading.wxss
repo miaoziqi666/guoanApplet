@@ -1,0 +1,73 @@
+/* components/public/listLoding/listLoading.wxss */
+
+.loading-box {
+  text-align: center;
+  height: 100rpx;
+}
+.no-data{
+  padding: 20rpx 0rpx;
+}
+.finish{
+  display: block;
+  font-size: 32rpx;
+  color: #333;
+  position: relative;
+}
+
+.finish .tip{
+  padding:  0 20rpx;
+  position: relative;
+}
+
+.finish .tip::after, .tip::before{
+  content: " ";
+  position: absolute;
+  width: 50%;
+  right: -55%;
+  height: 1rpx;
+  background: #333;
+  top: 20rpx;
+ 
+}
+
+.finish .tip::before{
+  left: -55%;
+}
+
+.make{
+  margin-top:20rpx; 
+}
+
+.make .phone-number{
+  display: block;
+  font-size: 40rpx;
+  color: #c9151d;
+}
+
+.loading {
+  display: inline-block;
+  height: 50rpx;
+  width: 50rpx;
+  margin-top: 25rpx;
+  animation: loading 1s linear infinite;
+}
+
+@keyframes loading {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes loading {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(360deg);
+  }
+}

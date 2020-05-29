@@ -1,0 +1,189 @@
+/* components/list/selectBar.wxss */
+
+.select-bar{
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 80rpx;
+  background: #fff;
+  z-index: 2;
+}
+
+/*分类栏  */
+.group {
+  overflow: hidden;
+  font-size: 28rpx;
+  line-height: 80rpx;
+  border-bottom: 1px solid #c8c8c8;
+}
+
+.type {
+  display: inline-block;
+  width: 25%;
+  text-align: center;
+  position: relative;
+}
+
+.type:last-child::after {
+  content: "";
+}
+
+.type::after {
+  content: "|";
+  position: absolute;
+  right: 0;
+  color: #c8c8c8;
+}
+
+.name {
+  transition: 0.3s;
+}
+
+.type.active .name {
+  color: #e24e59;
+}
+
+.arrow {
+  display: inline-block;
+  position: relative;
+  top: 10rpx;
+  left: 15rpx;
+  border: 12rpx solid transparent;
+  border-top: 15rpx solid #333;
+  width: 0;
+  height: 0;
+  transition: 0.3s;
+}
+
+.type.active .arrow {
+  border-top: 15rpx solid #e24e59;
+  transform: rotate(-180deg);
+  transform-origin: 12rpx 6rpx;
+}
+
+/*遮罩层  */
+.mask{
+  position: fixed;
+  z-index: 1;
+  background: rgba(0, 0, 0, 0.6);
+  top: 82rpx;
+  bottom: 0;
+  width: 100%;
+}
+
+/*区域弹出层  */
+.popup {
+  height: 700rpx;
+  position: absolute;
+  top: 82rpx;
+  left: 0;
+  right: 0;
+  background: #fff;
+  display: flex;
+  border-bottom: 1rpx solid #c8c8c8;
+  z-index: 2;
+}
+
+.scroller-view {
+  height: 700rpx;
+  position: relative;
+}
+
+.scroller-view::after {
+  content: " ";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: 1rpx;
+  background: #c8c8c8;
+}
+
+.scroller-view .list-item {
+  display: block;
+  padding: 15rpx 20rpx 15rpx 40rpx;
+  font-size: 30rpx;
+  transition: .2s;
+}
+
+.list-item.active {
+  color: #e24e59;
+  background-color: #d4d4d4;
+}
+
+/*地铁弹出层  */
+
+/*价格弹出层  */
+.popup.gray{
+  background: #e8e8e8;
+  padding: 10rpx 15rpx;
+  display: block;
+}
+
+.popup.min{
+  height: 350rpx;
+}
+
+.panel{
+  background: #fff;
+}
+
+.panel .label{
+  margin: 10rpx 50rpx;
+  font-size: 27rpx;
+  border-bottom: 1px solid #e8e8e8;
+  padding: 5px 0;
+}
+
+.panel .slider-box{
+  padding: 20rpx;
+}
+
+.panel .select-box{
+  overflow: hidden;
+  padding: 10rpx 50rpx 10rpx 50rpx;
+  font-size: 25rpx;
+}
+
+.select-box .tab{
+  display: inline-block;
+  background: #e8e8e8;
+  padding: 10rpx 20rpx;
+  border-radius: 5rpx;
+  margin: 0 10rpx 15rpx 10rpx;
+  transition: .3s;
+}
+
+.select-box .tab.active{
+  background: #e24e5a;
+  color: #fff;
+}
+
+.button-group{
+  position: absolute;
+  bottom: 20rpx;
+  overflow: hidden;
+  left: 0;
+  width: 100%;
+}
+
+.button-group .item{
+  float: left;
+  width: 40%;
+  margin: 0 5%;
+  line-height: 80rpx;
+}
+
+.submit-button{
+  background: #e24e5a;
+  color: #fff;
+  border: #e24e5a;
+}
+
+.cancel-button{
+  background: #fff;
+  color: #e24e5a;
+  border: #e24e5a;
+}
+
+/*筛选弹出层  */

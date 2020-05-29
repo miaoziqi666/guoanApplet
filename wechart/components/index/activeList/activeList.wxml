@@ -1,0 +1,10 @@
+<!--components/activeList/activeList.wxml-->
+<block wx:for="{{list}}" wx:key="{{index}}">
+  <view class='active-item' bindtap='tapActive' data-url="{{item.url}}">
+    <image class='cover' mode="scaleToFill" lazy-load="{{true}}" src="{{item.img}}"></image>
+    <view class="paperwork">
+      <text class='title'>{{item.title}}</text>
+      <text class='desc'>{{item.desc}}</text>
+    </view>
+  </view>
+</block>

@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "我",
+  "usingComponents": {
+    "component-form-title": "/components/public/formTitle/formTitle",
+    "component-menu-panel": "/components/me/menuPanel/menuPanel"
+  }
+}

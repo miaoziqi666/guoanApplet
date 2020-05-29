@@ -1,0 +1,199 @@
+/* pages/lease/lease.wxss */
+
+.background {
+  background: #e8e8e8;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.banner {
+  height: 450rpx;
+  background: #fff;
+}
+
+.content {
+  padding: 15rpx;
+}
+
+.info-group {
+  background: #fff;
+  font-size: 28rpx;
+  padding: 10rpx 20rpx;
+}
+
+.info-group .info-line {
+  padding: 20rpx;
+  overflow: hidden;
+}
+
+.info-line .info {
+  float: right;
+  color: #999;
+  max-width: 70%;
+}
+
+.info .number {
+  color: #e24e5a;
+}
+
+.content .title-segment-line {
+  position: relative;
+  width: 100%;
+  text-align: center;
+  margin: 40rpx 0 50rpx 0;
+}
+
+.title-segment-line .title {
+  background: #e8e8e8;
+  padding: 0 30rpx;
+  font-size: 32rpx;
+  color: #999;
+}
+
+.content .title-segment-line::before {
+  content: " ";
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1rpx;
+  background: #ccc;
+  top: 30rpx;
+  z-index: -1;
+}
+
+.content .receipt-item {
+  background: #fff;
+  margin-bottom: 20rpx;
+  font-size: 28rpx;
+  padding: 10rpx 20rpx;
+  overflow: hidden;
+  position: relative;
+}
+
+.receipt-item .item-line {
+  padding: 20rpx;
+  overflow: hidden;
+}
+
+.item-line .label {
+  min-width: 150rpx;
+  display: inline-block;
+}
+
+.item-line .info {
+  float: right;
+  color: #999;
+}
+
+.item-line .info.left {
+  float: none;
+  display: inline-block;
+}
+
+.item-line .info.left .left-time-tip {
+  color: #e24e5a;
+  display: inline-block;
+}
+
+.receipt-item .right-lable {
+  position: absolute;
+  right: 20rpx;
+  top: 20rpx;
+  height: 140rpx;
+  width: 140rpx;
+  background: #e24e5a;
+  color: #fff;
+  line-height: 40rpx;
+  padding: 20rpx 10rpx;
+  text-align: center;
+}
+
+.right-lable .text {
+  display: block;
+  font-size: 28rpx;
+  padding-bottom: 20rpx;
+}
+
+.right-lable .text .strong {
+  font-size: 32rpx;
+}
+
+.receipt-item .dashed-line {
+  border-bottom: 1rpx dashed #e8e8e8;
+  margin: 0 0 30rpx 0;
+  padding: 30rpx 0 0 0;
+  position: relative;
+}
+
+.receipt-item .dashed-line::before {
+  content: " ";
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 50%;
+  background: #e8e8e8;
+  display: inline-block;
+  position: absolute;
+  left: -75rpx;
+  top: -10rpx;
+}
+
+.receipt-item .dashed-line::after {
+  content: " ";
+  height: 80rpx;
+  width: 80rpx;
+  border-radius: 50%;
+  background: #e8e8e8;
+  display: inline-block;
+  position: absolute;
+  right: -75rpx;
+  top: -10rpx;
+}
+
+.receipt-item .center-line {
+  text-align: center;
+  padding: 0 20rpx 30rpx 20rpx;
+  border-bottom: 1rpx solid #e8e8e8;
+}
+
+.center-line .money {
+  padding: 0 20rpx;
+  color: #e24e5a;
+}
+
+.receipt-item .bottom-line {
+  padding: 30rpx 20rpx;
+}
+
+.bottom-line .status {
+  padding: 5rpx 15rpx;
+  color: #ff9b2f;
+}
+
+.bottom-line .status.success {
+  color: rgb(27, 190, 75);
+}
+
+.bottom-line .btn-group {
+  float: right;
+}
+
+.btn-group .pay-detail {
+  text-decoration: underline;
+  color: #3898be;
+}
+
+.btn-group .pay-btn {
+  background: #e24e5a;
+  color: #fff;
+  padding: 10rpx 15rpx;
+  border-radius: 5rpx;
+  margin-left: 40rpx;
+  opacity: 0.7;
+}
+
+.btn-group .pay-btn.active {
+  opacity: 1;
+}

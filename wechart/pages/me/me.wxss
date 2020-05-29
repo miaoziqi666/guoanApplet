@@ -1,0 +1,85 @@
+/* pages/me/me.wxss */
+
+.background {
+  background: #e8e8e8;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.page-header {
+  background: #e24e5a;
+  font-size: 28rpx;
+  height: 350rpx;
+  padding: 30rpx 0;
+  text-align: center;
+}
+
+.page-header .user-head {
+  width: 150rpx;
+  height: 150rpx;
+  border-radius: 50%;
+  display: block;
+  margin: 0 auto 40rpx auto;
+  border: 5rpx solid #f1a7ac;
+  background: #d6d6d6;
+}
+
+.page-header .user-name {
+  color: #fff;
+  font-weight: bold;
+  font-size: 34rpx;
+}
+
+.page-header .user-phone {
+  color: #eee;
+  margin-top: 10rpx;
+  font-size: 30rpx;
+}
+
+.content{
+  padding-bottom: 50rpx;
+}
+
+.content .option-group {
+  background: #fff;
+}
+
+.option-group .option-item {
+  margin: 0 30rpx;
+  position: relative;
+  line-height: 100rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.option-group .option-item:last-child{
+  border-bottom: none;
+}
+
+.option-group .option-item .link-mark{
+  position: absolute;
+  display: block;
+  height: 40rpx;
+  width: 40rpx;
+  right: 0;
+  top: 30rpx;
+}
+
+.option-item .lable-group{
+  font-size: 30rpx;
+  color: #333;
+}
+
+.lable-group .icon{
+  height: 40rpx;
+  width: 40rpx;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 30rpx;
+}
+
+.lable-group .label{
+ vertical-align: middle;
+}

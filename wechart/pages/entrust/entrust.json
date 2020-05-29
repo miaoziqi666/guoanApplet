@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "在线委托",
+  "usingComponents": {
+    "component-form-title": "/components/public/formTitle/formTitle",
+    "component-pop-error": "/components/public/popError/popError"
+  }
+}

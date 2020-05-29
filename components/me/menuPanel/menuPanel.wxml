@@ -1,0 +1,9 @@
+<!--components/me/menuPanel/menuPanel.wxml-->
+<view class='menu-panel'>
+
+  <view class='menu-item' wx:for="{{menu}}" wx:key="index" bindtap='toPage' data-url="{{item.url}}">
+    <image class='icon' src='{{item.icon}}'></image>
+    <text class='name'>{{item.name}}</text>
+  </view>
+
+</view>

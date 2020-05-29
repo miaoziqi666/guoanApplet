@@ -1,0 +1,9 @@
+<view class="group">
+  <block wx:for="{{tabs}}" wx:key="{{index}}">
+    <view class='{{(current === index ? "active" : "" )}}' bindtap='switchTab' data-index="{{index}}">
+      {{item}}
+    </view>
+  </block>
+
+  <label class='{{"shuttle " + (direction === 1 ? "right" : "" )}}' style="{{'left:' + left + '%;right:' + right + '%'}}"></label>
+</view>

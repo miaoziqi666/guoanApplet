@@ -1,0 +1,33 @@
+<!--components/public/houseDetail/houseDetail.wxml-->
+<view class='home_detail'>
+    <view class='hd_left'>
+       <view class='hd_img'>
+        <image class='hd_img_s' src='{{picImage}}'></image>
+        </view>
+    </view>
+    <view class='hd_right'>
+      <view class='hdr_home'>
+        <view class='hdr_name'>
+          {{houseDetail.houseName}}  {{houseDetail.roomName}}
+        </view>
+        <view class='hdr_price'>
+          <view class='hdp_money'> {{houseDetail.rent}}</view>元/月
+        </view>
+        <view class='hdr_lc'>
+          <!--展示房间面积  -->
+          <view class='hdrlc_left' hidden='{{!houseDetail.houseArea}}'>
+              {{houseDetail.houseArea}}m² | {{houseDetail.buildFloor}}层
+          </view>
+
+           <!--展示楼门门牌号  -->
+          <view class='hdrlc_left' hidden='{{!houseDetail.houseNo}}'>
+             {{houseDetail.buildNo}}号楼{{houseDetail.buildUnitNo}}单元{{houseDetail.houseNo}}
+          </view>
+
+          <view class='hdrlc_right'>
+             {{houseDetail.houseStatus}}
+          </view>
+        </view>
+      </view>
+    </view>
+  </view>

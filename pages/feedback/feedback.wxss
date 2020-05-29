@@ -1,0 +1,157 @@
+/* pages/feedback/feedback.wxss */
+
+.background {
+  background: #e8e8e8;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.header {
+  height: 300rpx;
+  display: block;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 2;
+}
+
+.tab-bar{
+  position: fixed;
+  top: 300rpx;
+  width: 100%;
+  z-index: 2;
+}
+
+/*我要投诉  */
+.form {
+  padding: 15rpx;
+  margin-top: 380rpx;
+}
+
+.form .content-box {
+  padding: 20rpx;
+  background: #fff;
+}
+
+.form .content {
+  border: 1rpx solid #ccc;
+  margin: 0 auto;
+  width: 100%;
+  text-align: left;
+  font-size: 28rpx;
+  padding: 10rpx;
+  height: 300rpx;
+}
+
+.form .tips {
+  margin-top: 10rpx;
+  padding: 0 20rpx;
+  line-height: 80rpx;
+  background: #fff;
+  font-size: 24rpx;
+  color: #e24e59;
+}
+
+.form .phone {
+  margin-top: 10rpx;
+  padding: 0 20rpx;
+  line-height: 80rpx;
+  background: #fff;
+  font-size: 28rpx;
+  color: #333;
+}
+
+.submit {
+  background: #e24e59;
+  font-size: 30rpx;
+  margin-top: 40rpx;
+  line-height: 80rpx;
+  color: #fff;
+}
+
+
+/*投诉记录  */
+.list-view{
+  margin-top: 380rpx;
+  padding: 30rpx;
+}
+
+.list-view .list-item{
+  background: #fff;
+  border-radius: 20rpx;
+  padding-right: 80rpx;
+  font-size: 30rpx;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 2px 3px 5px 1px rgba(204, 204, 204, 0.34);
+  margin-bottom: 20rpx;
+}
+
+.list-item .title{
+  line-height: 60rpx;
+  padding: 5rpx 20rpx 5rpx 30rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.title .label{
+  color: #ff9b2f;
+}
+
+.title .no{
+ float: right; 
+}
+
+.list-item .body{
+  padding: 20rpx 20rpx 30rpx 30rpx;
+}
+
+.body .subject{
+  font-size: 32rpx;
+  margin-bottom: 15rpx;
+}
+
+.body .content{
+  color: #666;
+  margin-bottom: 5rpx;
+}
+
+.body .time{
+  color: #666;
+}
+
+.body .result{
+  font-size: 32rpx;
+  margin-top: 15rpx;
+}
+
+.list-item .status{
+  position: absolute;
+  right: 0;
+  width: 60rpx;
+  top: 0;
+  font-size: 32rpx;
+  writing-mode: vertical-rl;
+  text-align: center;
+  bottom: 0;
+  margin: 0 25rpx 0 0;
+  letter-spacing: 10rpx;
+  border-left: 1rpx solid #eee;
+  color: #999;
+}
+
+.list-item .status.active{
+  color: #5ecd7f;
+}
+
+.list-item .status::before{
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 10rpx;
+  background: linear-gradient(to right, rgba(202, 201, 201, 0.20), rgba(0, 0, 0, 0));
+}

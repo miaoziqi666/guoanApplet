@@ -1,0 +1,70 @@
+<!--pages/entrust/entrust.wxml-->
+<component-pop-error></component-pop-error>
+
+<view class='background'>
+</view>
+
+<view hidden='{{showCommunityPage}}'>
+  <image class='header' src='https://img.guoanfamily.com/wechat/entrust.png'></image>
+
+  <!--表单  -->
+  <view class='content'>
+    <view class='tips'>留下您的联系方式与房屋信息，我们会及时和您取得联系</view>
+
+    <view class='splitter'></view>
+
+    <view class='form-line'>
+      <label class='input-label require'>手机号</label>
+      <input class='input' placeholder='请输入手机号' maxlength='11' type="number" bindinput="phoneChange" value="{{phone}}"></input>
+      <text class='require-tips'>（必填）</text>
+    </view>
+
+    <view class='form-line'>
+      <label class='input-label require'>姓名</label>
+      <input class='input' placeholder='请输入姓名' maxlength='20' bindinput="nameChange" value='{{name}}'></input>
+      <text class='require-tips'>（必填）</text>
+    </view>
+
+    <view class='splitter'></view>
+
+    <component-form-title title="房屋信息" icon="/icon/feedback/feedback_pinzhigongyu.png"></component-form-title>
+    <view class='form-line'>
+      <label class='input-label'>小区名称</label>
+      <input class='input' disabled='{{true}}' value="{{communityName}}" placeholder='请选择小区' bindtap='showCommunityList'></input>
+    </view>
+
+    <view class='splitter'></view>
+
+    <component-form-title title="备注" icon="/icon/feedback/feedback_pinzhigongyu.png"></component-form-title>
+    <view class='form-line'>
+      <textarea class='remark' bindinput="remarkChange" show-confirm-bar="{{false}}" maxlength="200" value="{{content}}" placeholder="请输入其他情况,如果没有匹配到您的小区,请在此处输入（200个汉字以内）"></textarea>
+    </view>
+
+    <button class='submit' bindtap='submit'>提交</button>
+  </view>
+</view>
+
+
+
+<view hidden='{{!showCommunityPage}}'>
+  <view class='search-bar'>
+
+    <icon class='search-icon' type="search" size="15" />
+
+    <input class='search-input' placeholder='请选择小区' value="{{communityName}}" bindinput="communityNameConfirm"></input>
+
+    <icon class='clear-icon' type="clear" size="15" hidden='{{!communityName}}' bindtap='clearSearch' />
+
+    <label class='cancel-btn' bindtap='showCommunityList'>取消</label>
+
+  </view>
+
+  <view class='community-list'>
+  
+    <view class="list-item" wx:for="{{communityList}}" wx:key="{{index}}" bindtap='changeCommunityName' data-name='{{item.name}}' data-id='{{item.id}}'>
+      {{item.name}}
+    </view>
+  
+  </view>
+
+</view>

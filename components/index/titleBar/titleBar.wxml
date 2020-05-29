@@ -1,0 +1,10 @@
+<!--commponent/titleBar/titleBar.wxml-->
+<view class='group'>
+  <view class='label'>
+    <image class='icon' wx-if="{{icon}}" src='{{"../../../icon/index/" + icon}}'></image>
+    <text class="name">{{labelName}}</text>
+  </view>
+
+  <text class='line'></text>
+  <text class='link' wx-if="{{link}}" bindtap="more">查看更多>></text>
+</view>

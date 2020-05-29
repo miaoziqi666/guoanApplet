@@ -1,0 +1,27 @@
+/**index.wxss**/
+/*轮播图  */
+.banner {
+  height: 380rpx;
+}
+
+.slide-image {
+  width: 100%;
+  height: 100%;
+}
+
+/*房源列表  */
+
+
+/*广告样式  */
+
+
+/*产品介绍  */
+.slogan{
+  display: block;
+  width: 100%;
+  font-size: 60rpx;
+  font-weight: bold;
+  color: #e83727;
+  text-align: center;
+  margin: 50rpx 0 40rpx 0;
+}

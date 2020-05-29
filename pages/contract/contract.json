@@ -1,0 +1,8 @@
+{
+    "navigationBarTitleText": "我的合同",
+    "usingComponents": {
+      "component-list-loading": "/components/public/listLoading/listLoading",
+      "component-tab-bar": "/components/public/tabBar/tabBar"
+    },
+    "enablePullDownRefresh": true
+}

@@ -1,0 +1,108 @@
+<!--components/list/selectBar.wxml-->
+<view class='select-bar'>
+
+  <!--分类栏  -->
+  <view class='group'>
+    <block wx:for="{{types}}" wx:key="{{index}}">
+      <view class='{{"type " + (current === index ? "active" : "" )}}' bindtap='switchType' data-index="{{index}}">
+        <text class='name'>{{item}}</text>
+        <text class='arrow'></text>
+      </view>
+    </block>
+  </view>
+
+  <!--遮罩层  -->
+  <view class='mask' hidden="{{current === -1}}" bindtap="hiddenMask"></view>
+
+  <!--区域弹出层  -->
+  <view hidden="{{current !== 0}}">
+    <view class='popup'>
+      <!--左侧  -->
+      <scroll-view class='scroller-view' scroll-y>
+        <view class='{{"list-item " + (activeAreaId === item.id ? "active" : "" )}}' wx:for="{{areaList}}" wx:key="{{index}}" bindtap='getAreaList' data-areaid="{{item.id}}">
+          {{item.name}}
+        </view>
+      </scroll-view>
+      <!--右侧  -->
+      <scroll-view class='scroller-view' scroll-y>
+        <view class='{{"list-item " + (activeRegionId === item.id ? "active" : "" )}}' wx:for="{{regionList}}" wx:key="{{index}}" bindtap='commitArea' data-regionid="{{item.id}}">
+          {{item.name}}
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+
+  <!--地铁弹出层  -->
+  <view hidden='{{current !== 1}}'>
+    <view class='popup'>
+      <!--左侧  -->
+      <scroll-view class='scroller-view' scroll-y>
+        <view class='{{"list-item " + (activeSubwayId === item.id ? "active" : "" )}}' wx:for="{{subwayLine}}" wx:key="{{index}}" bindtap='getStationLine' data-subwayid="{{item.id}}">
+          {{item.name}}
+        </view>
+      </scroll-view>
+      <!--右侧  -->
+      <scroll-view class='scroller-view' scroll-y>
+        <view class='{{"list-item " + (activeStationId === item.id ? "active" : "" )}}' wx:for="{{stationLine}}" wx:key="{{index}}" bindtap='commitStation' data-stationid="{{item.id}}">
+          {{item.name}}
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+
+  <!--价格弹出层  -->
+  <view hidden='{{current !== 2}}'>
+    <view class='popup min gray'>
+
+      <view class='panel'>
+        <view class='label'>价格区间(每月)</view>
+
+        <view class="slider-box">
+          <slider min="500" max="20000" step="100" show-value="true" value="{{price}}" bindchange="changePrice"></slider>
+        </view>
+      </view>
+
+
+      <view class='button-group'>
+        <button class='item submit-button' size="mini" bindtap="submitPrice">确定</button>
+        <button class='item cancel-button' size="mini" bindtap="clearPrice">重置</button>
+      </view>
+    </view>
+  </view>
+
+  <!--筛选弹出层  -->
+  <view hidden='{{current !== 3}}'>
+    <view class='popup gray'>
+
+      <view class='panel'>
+        <view class='label'>房型</view>
+
+        <view class="select-box">
+          <label class='tab' class='{{"tab " + (activeHouseCode === item.code ? "active" : "" )}}' wx:for="{{houseType}}" wx:key="{{index}}" bindtap='changeHouseType' data-code="{{item.code}}">{{item.name}}</label>
+        </view>
+      </view>
+
+      <view class='panel'>
+        <view class='label'>户型</view>
+
+        <view class="select-box">
+          <label class='tab' class='{{"tab " + (activeRoomCode === item.code ? "active" : "" )}}' wx:for="{{roomType}}" wx:key="{{index}}" bindtap='changeRoomType' data-code="{{item.code}}">{{item.name}}</label>
+        </view>
+      </view>
+
+      <view class='panel'>
+        <view class='label'>面积</view>
+
+        <view class="select-box">
+          <label class='tab' class='{{"tab " + (activeAreaCode === item.code ? "active" : "" )}}' wx:for="{{areaType}}" wx:key="{{index}}" bindtap='changeAreaType' data-code="{{item.code}}">{{item.name}}</label>
+        </view>
+      </view>
+
+      <view class='button-group'>
+        <button class='item submit-button' size="mini" bindtap="submitFilter">确定</button>
+        <button class='item cancel-button' size="mini" bindtap="clearFilter">重置</button>
+      </view>
+    </view>
+  </view>
+
+</view>

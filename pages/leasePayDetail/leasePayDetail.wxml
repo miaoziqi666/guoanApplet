@@ -1,0 +1,62 @@
+<!--pages/leasePayDetail/leasePayDetail.wxml-->
+<view class='background'>
+</view>
+
+<view class='content'>
+  <view class='info-group'>
+    <view class='info-line'>
+      <label class='label'>合同编号</label>
+      <text class='info'>{{saleContractId}}</text>
+    </view>
+
+    <view class='info-line'>
+      <label class='label'>物业地址</label>
+      <text class='info'>{{houseAddress}}</text>
+    </view>
+
+    <view class='info-line'>
+      <label class='label'>租金期数</label>
+      <text class='info'>第 {{number}} 期</text>
+    </view>
+
+    <view class='info-line'>
+      <label class='label'>已交次数</label>
+      <text class='info'>{{submitCount}} 次</text>
+    </view>
+
+    <view class='info-line'>
+      <label class='label'>应缴金额</label>
+      <text class='info'>
+      <text class='price'>￥{{planRent}}</text>
+      </text>
+    </view>
+  </view>
+
+  <view class='splitter'></view>
+
+  <view class='info-group'>
+    <view class='info-line'>
+      <label class='label'>已交金额</label>
+      <text class='info'>￥{{realRent}}</text>
+    </view>
+  </view>
+
+  <view class='splitter'></view>
+
+  <view class='info-table-block'>
+    <view class='header-group'>
+      <view class='grid'>支付次数</view>
+      <view class='grid'>支付金额</view>
+      <view class='grid'>支付日期</view>
+      <view class='grid'>支付状态</view>
+    </view>
+
+    <view class='body-group' wx:for="{{receiptList}}" wx:key="index">
+      <view class='grid'>第 {{item.receiptNo}} 次</view>
+      <view class='grid'>￥{{item.realReceipt}}</view>
+      <view class='grid'>{{item.realReceiptDate}}</view>
+      <view class='grid'>{{item.receiptStatusName}}</view>
+    </view>
+  </view>
+
+</view>

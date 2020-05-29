@@ -1,0 +1,28 @@
+<!--pages/collectList/collectList.wxml-->
+<view class='background'></view>
+
+<view class='list-view'>
+
+  <view class="list-item" wx:for="{{list}}" wx:key="{{index}}" bindtap='toDetail' data-producttype='{{item.productType}}' data-id='{{item.roomId}}'>
+    <image class='cover'  lazy-load="{{true}}" src="{{item.image}}"></image>
+
+    <view class='house-info'>
+      <view class='name'>{{item.collectTitle}}</view>
+      <view class='info price'>￥{{item.collectResume}}/月</view>
+      <view class='info'>{{item.collectContent || " "}}</view>
+      <view class='tag-group'>
+        <view class='tag' wx:for="{{item.tags}}" wx:key="{{index}}" style='{{"background:" + tagColor[index]}}'>
+          {{item}}
+        </view>
+      </view>
+
+      <view catchtap="stop">
+        <image class='delete-btn' src='/icon/public/delete-btn.png' bindtap='deleteCollect' data-collecturl='{{item.collectUrl}}'></image>
+      </view>
+
+    </view>
+  </view>
+
+</view>
+
+<component-list-loading loading="{{loading}}"></component-list-loading>

@@ -1,0 +1,38 @@
+<swiper class="banner" indicator-dots="{{indicatorDots}}" autoplay="{{autoplay}}" interval="{{interval}}" duration="{{duration}}" circular="{{circular}}" current="{{current}}">
+  <block wx:for="{{imgUrls}}" wx:key="unique">
+    <swiper-item>
+      <image src="{{item}}" class="slide-image" bindtap="tapBanner" data-index="{{index}}"/>
+    </swiper-item>
+  </block>
+</swiper>
+
+<component-title-bar label-name="国安家公寓" link="{{true}}" url="../list/list?type=clear"  open-type="switch" icon="index_guoanjiagongyu.png"></component-title-bar>
+<component-double-swiper original-list="{{roomList}}" desc="{{true}}"></component-double-swiper>
+
+<view class='splitter'></view>
+
+<component-title-bar label-name="最新上架" link="{{true}}" url="../list/list?type=clear" open-type="switch" icon="index_zuixinshangjia.png"></component-title-bar>
+<component-double-swiper original-list="{{houseList}}" desc="{{true}}"></component-double-swiper>
+
+<view class='splitter'></view>
+
+<component-title-bar label-name="国安Home" link="{{false}}"  icon="index_guoanhome.png"></component-title-bar>
+<component-advert src="https://img.guoanfamily.com/rent/static/HomePage/guoanyutu.png" url="/pages/list/list?type=0019003"></component-advert>
+
+<view class='splitter'></view>
+
+<!-- <component-title-bar label-name="精彩活动" link="{{false}}" icon="index_jingcaihuodong.png"></component-title-bar>
+<component-active-list list="{{activeList}}"></component-active-list> -->
+
+<view class='splitter'></view>
+
+<component-title-bar label-name="业主委托" link="{{false}}" icon="index_yezhuweituo.png"></component-title-bar>
+<component-advert src="https://img.guoanfamily.com/rent/static/HomePage/homeweituo.png" url="/pages/entrust/entrust"></component-advert>
+
+<view class='splitter'></view>
+
+<text class="slogan">善待自己住好点</text>
+<component-switch-tab tabs="{{tabs}}" bind:switchProduct="switchProduct"></component-switch-tab>
+<component-double-swiper original-list="{{productList}}"    desc="{{false}}" resetFlag="{{resetTime}}"></component-double-swiper>
+
+<view style='height:80rpx;'></view>

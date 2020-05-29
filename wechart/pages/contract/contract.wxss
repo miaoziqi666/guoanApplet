@@ -1,0 +1,112 @@
+/* pages/contract/contract.wxss */
+
+.background {
+  background: #e8e8e8;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.header {
+  height: 300rpx;
+  display: block;
+  width: 100%;
+  position: fixed;
+  top: 0;
+  z-index: 1;
+}
+
+.tab-bar {
+  position: fixed;
+  top: 300rpx;
+  width: 100%;
+  z-index: 1;
+}
+
+/*列表  */
+
+.list-view {
+  margin-top: 380rpx;
+  padding: 30rpx;
+}
+
+.list-view .list-item {
+  background: #fff;
+  border-radius: 20rpx;
+  padding-right: 80rpx;
+  font-size: 28rpx;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 2px 3px 5px 1px rgba(204, 204, 204, 0.34);
+  margin-bottom: 20rpx;
+}
+
+.list-item .title {
+  line-height: 60rpx;
+  padding: 5rpx 20rpx 5rpx 30rpx;
+  border-bottom: 1rpx solid #eee;
+}
+
+.title .label {
+  color: #ff9b2f;
+}
+
+.title .no {
+  float: right;
+}
+
+.list-item .body {
+  padding: 20rpx 20rpx 20rpx 30rpx;
+  position: relative;
+  min-height: 220rpx;
+}
+
+.body .cover {
+  position: absolute;
+  height: 180rpx;
+  width: 180rpx;
+}
+
+.body .content {
+  padding: 0 0 0 210rpx;
+}
+
+.content .name {
+  font-size: 32rpx;
+  padding: 10rpx 0;
+}
+
+.content .rent-price {
+  color: #e24e5a;
+}
+
+.list-item .status {
+  position: absolute;
+  right: 0;
+  width: 60rpx;
+  top: 0;
+  font-size: 32rpx;
+  writing-mode: vertical-rl;
+  text-align: center;
+  bottom: 0;
+  margin: 0 25rpx 0 0;
+  letter-spacing: 10rpx;
+  border-left: 1rpx solid #eee;
+  color: #999;
+}
+
+.list-item .status.active {
+  color: #5ecd7f;
+}
+
+.list-item .status::before {
+  content: " ";
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  width: 10rpx;
+  background: linear-gradient(to right, rgba(202, 201, 201, 0.20), rgba(0, 0, 0, 0));
+}

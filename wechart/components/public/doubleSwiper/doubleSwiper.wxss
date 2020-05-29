@@ -1,0 +1,52 @@
+/* components/doubleSwiper/doubleSwiper.wxss */
+/*不带描述信息  */
+.double-swiper{
+  width: 95%;
+  margin: 0 auto;
+}
+
+.group{
+  height: 450rpx;
+  display: flex;
+  justify-content: space-around;
+}
+
+.item{
+  width: 48%;
+  height: 100%;
+}
+
+.image{
+  height: 100%;
+  width: 100%;
+  display: block;
+}
+
+/*含有描述信息  */
+.double-swiper.desc{
+  height: 370rpx;
+}
+
+.double-swiper.desc .image{
+  height: 270rpx;
+}
+
+.image-desc{
+  padding: 8rpx 16rpx;
+}
+
+.image-desc .name{
+  display: block;
+  font-size: 28rpx;
+  margin-bottom: 5rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.image-desc .price{
+  display: block;
+  font-size: 24rpx;
+  color: #e84e56;
+}
+

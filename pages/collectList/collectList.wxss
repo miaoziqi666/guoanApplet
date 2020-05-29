@@ -1,0 +1,87 @@
+/* pages/collectList/collectList.wxss */
+
+.background {
+  background: #e8e8e8;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+  z-index: -1;
+}
+
+.list-view {
+  padding: 20rpx;
+}
+
+.list-item {
+  position: relative;
+  background: #fff;
+  border-bottom: 10rpx solid rgb(242, 242, 242);
+}
+
+.list-item:last-child {
+  border-bottom: none;
+}
+
+.cover {
+  height: 200rpx;
+  width: 250rpx;
+  position: absolute;
+  left: 20rpx;
+  top: 25rpx;
+}
+
+.house-info {
+  position: relative;
+  padding: 25rpx 20rpx 25rpx 290rpx;
+  min-height: 240rpx;
+}
+
+.name {
+  font-size: 36rpx;
+  margin: 0 0 15rpx 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.info {
+  font-size: 30rpx;
+  color: #333;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.info.price {
+  color: #e24e5a;
+}
+
+.tag-group {
+  margin: 20rpx 0 0 0;
+  overflow: hidden;
+}
+
+.tag {
+  padding: 5rpx 10rpx;
+  font-size: 25rpx;
+  background: red;
+  color: #fff;
+  width: 30%;
+  display: inline-block;
+  margin-right: 3%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+  border-radius: 5rpx;
+}
+
+.delete-btn{
+  position: absolute;
+  right: 20rpx;
+  top: 70rpx;
+  height: 50rpx;
+  width: 50rpx;
+  z-index: 2;
+}
